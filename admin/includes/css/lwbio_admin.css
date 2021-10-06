@@ -1,0 +1,185 @@
+/* Dashboard table */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+  
+td, th {
+    border: 1px solid #cfcfcf;
+    text-align: left;
+    padding: 0.5rem;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.lwbio_table {
+    width: 80%;
+    margin: 3.5rem auto 0 auto;
+}
+
+.lwbio_table_form {
+    display: inline-block;
+}
+
+.lwbio_td_actions_button, .lwbio_table_form_button {
+    color: #0d6efd;
+    display: inline-block;
+    padding: 0.3125rem;
+}
+
+.lwbio_td_actions_button:hover, .lwbio_table_form_button:hover {
+    cursor: pointer;
+    color: #135e96;
+}
+
+.lwbio_td_actions_button {
+    width: 1.125rem;
+    height: 1.125rem;
+    max-width: 1.125rem;
+    max-height: 1.125rem;
+}
+
+.lwbio_table_form_button {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.875rem;
+    max-width: 1.875rem;
+    max-height: 1.875rem;
+}
+
+.lwbio_table_title {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.lwbio_td_text {
+    width: 40%;
+}
+
+.lwbio_td_actions {
+    font-size: 1.2rem;
+    width: 10%;
+}
+
+.lwbio_td_service {
+    width: 40%;
+}
+
+/* Add/Edit form */
+
+.lwbio_form_card {
+    margin: 3.5rem auto 3.5rem auto;
+    display: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    width: 40%;
+    padding: 2rem;
+    border-radius: .25rem;
+}
+
+.lwbio_form input, .lwbio_form select {
+    display: block;
+    margin: 0 auto 1.75rem auto;
+    border: 1px solid #cfcfcf;
+    height: 3rem;
+    width: 16rem;
+}
+
+.lwbio_form label {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+.lwbio_form button {
+    display: block;
+    font-size: 1.1rem;
+    margin: 0 auto;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    height: 3rem;
+    width: 12rem;
+    background-color: #0d6efd;
+    color: #fff;
+    margin-bottom: .25rem;
+}
+
+.lwbio_form button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+
+.lwbio_form_type {
+    margin: 0 auto -1.5rem auto;
+    width: 16rem;
+    border-radius: .25rem;
+}
+
+.lwbio_form_type select {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #cfcfcf;
+    height: 3rem;
+    width: 16rem;
+}
+
+.lwbio_form_type label {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+
+/* Dashboard Shortcut */
+
+#lwbio_action_bar {
+    margin: 1.35rem 0 -3rem 76%;
+}
+
+.lwbio_action_bar_button {
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    height: 2rem;
+    width: 10rem;
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.lwbio_action_bar_button:hover {
+    background-color: #fff;
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+
+@media (max-width: 575.98px) {
+
+    .lwbio_table {
+        width: 95%;
+    }
+
+    #lwbio_action_bar {
+        margin-left: 51%;
+    }
+
+    .lwbio_td_actions {
+        font-size: 1.2rem;
+        width: 26%;
+    }
+
+    .lwbio_form_card {
+        width: 80%;
+    }
+}
