@@ -1,21 +1,17 @@
 /* Dashboard table */
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-}
-  
-td, th {
+.lwbio_table tr td, .lwbio_table tr th {
     border: 1px solid #cfcfcf;
-    text-align: left;
     padding: 0.5rem;
 }
   
-tr:nth-child(even) {
+.lwbio_table tr:nth-child(even) {
     background-color: #dddddd;
 }
 
 .lwbio_table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
     width: 80%;
     margin: 3.5rem auto 0 auto;
 }
