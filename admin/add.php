@@ -47,4 +47,5 @@
 				<button type="submit" class="lwbio_button_submit">Adicionar Rede Social</button>
 			</form>
 		</div>
+		<script src="<?= plugins_url('/includes/js/lwbio_form.js', __FILE__) ?>"></script>
 </div>

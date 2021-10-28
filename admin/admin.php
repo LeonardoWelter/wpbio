@@ -57,7 +57,6 @@ function lwbio_admin_page()
 function lwbio_enqueue_admin()
 {
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/a5981f4cad.js');
-	wp_enqueue_script('lwbio_form_js', plugins_url('/includes/js/lwbio_form.js', __FILE__));
 	wp_enqueue_style('lwbio_admin', plugins_url('/includes/css/lwbio_admin.css', __FILE__));
 }
 
