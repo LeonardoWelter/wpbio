@@ -32,7 +32,12 @@ require_once("admin/admin.php");
 
 function lwbio_links()
 {
+	ob_start();
 	include dirname(__FILE__) . '/public/lwbio_links_template.php';
+	$links_template = ob_get_contents();
+	ob_end_clean();
+
+	return $links_template;
 }
 
 add_shortcode('lwbio-links', 'lwbio_links');
