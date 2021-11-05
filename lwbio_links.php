@@ -27,6 +27,7 @@
 defined('ABSPATH') or die('Nope, not accessing this');
 
 require_once("includes/db.php");
+require_once("includes/lwbio_icon_handler.php");
 require_once("admin/admin.php");
 
 function lwbio_links()
