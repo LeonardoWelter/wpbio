@@ -12,7 +12,7 @@
  * Plugin Name:       WP Bio
  * Plugin URI:        https://github.com/LeonardoWelter/WPBio
  * Description:       Keep all your links in one place.
- * Version:           1.0.2
+ * Version:           1.1.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Leonardo Welter
