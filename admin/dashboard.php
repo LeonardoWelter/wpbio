@@ -1,6 +1,7 @@
 <?php ?>
 <div class="wrap">
     <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
+    <p style="text-align: center;">Precisa de ajuda sobre o plugin? Visite a <a href="https://wpbiodocs.readthedocs.io/en/latest/index.html">documentação</a> do plugin!</p>
     <div id="lwbio_action_bar">
         <a href="<?php echo admin_url('admin.php?page=lwbio_add'); ?>" class="lwbio_action_bar_button">Adicionar Link</a>
     </div>
