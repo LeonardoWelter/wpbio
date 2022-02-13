@@ -11,7 +11,7 @@
             if (!empty($logo)) {
                 echo "<img id='lwbio__logo' src='{$logo}' alt='logo' />";
             } else {
-                echo "<i id='lwbio__temp_logo' class='fas fa-globe' style='font-size: 128px;'></i>";
+                echo "<i id='lwbio__temp_logo' class='bi bi-globe2' style='font-size: 128px;'></i>";
             }
         ?>
         <div class="lwbio__links">

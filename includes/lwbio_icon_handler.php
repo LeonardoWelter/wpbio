@@ -5,31 +5,31 @@ function lwbio_fa_icon($service) {
 
     switch ($service) {
         case 'instagram':
-            $result = 'fab fa-instagram';
+            $result = 'bi bi-instagram';
             break;
         case 'facebook':
-            $result = 'fab fa-facebook';
+            $result = 'bi bi-facebook';
             break;
         case 'youtube':
-            $result = 'fab fa-youtube';
+            $result = 'bi bi-youtube';
             break;
         case 'twitter':
-            $result = 'fab fa-twitter';
+            $result = 'bi bi-twitter';
             break;
         case 'linkedin':
-            $result = 'fab fa-linkedin';
+            $result = 'bi bi-linkedin';
             break;
         case 'tiktok':
-            $result = 'fab fa-tiktok';
+            $result = 'bi bi-tiktok';
             break;
         case 'github':
-            $result = 'fab fa-github';
+            $result = 'bi bi-github';
             break;
         case 'wordpress':
-            $result = 'fab fa-wordpress-simple';
+            $result = 'bi bi-wordpress';
             break;
         default:
-            $result = 'fas fa-globe';   
+            $result = 'bi bi-globe2';   
     }
 
     return $result;

@@ -20,12 +20,12 @@
 						<td class='lwbio_td_text'>{$item->text}</td>
 						<td class='lwbio_td_url'>{$item->url}</td>
 						<td class='lwbio_td_actions'>
-							<a href='".admin_url("admin.php?page=lwbio_edit&id={$item->id}")."' class='lwbio_td_actions_button'><i class='fas fa-pen'></i></a>
+							<a href='".admin_url("admin.php?page=lwbio_edit&id={$item->id}")."' class='lwbio_td_actions_button'><i class='bi bi-pencil-square'></i></a>
 							<form action=".admin_url('admin-post.php')." method='post' class='lwbio_table_form'>
                                 <input type='hidden' name='action' value='remove_link'>
                                 <input type='hidden' name='data' value='link'>
                                 <input type='hidden' name='lwbio_id' value=".$item->id.">
- 								<button class='lwbio_table_form_button' type='submit'><i class='fas fa-trash'></i></button>
+ 								<button class='lwbio_table_form_button' type='submit'><i class='bi bi-trash3-fill'></i></button>
 							</form>
 						</td>
 					</tr>";
@@ -48,12 +48,12 @@
 					<td class='lwbio_td_service'>{$item->service}</td>
 					<td class='lwbio_td_url'>{$item->url}</td>
 					<td class='lwbio_td_actions'>
-						<a href='".admin_url("admin.php?page=lwbio_edit&id={$item->id}")."' class='lwbio_td_actions_button'><i class='fas fa-pen'></i></a>
+						<a href='".admin_url("admin.php?page=lwbio_edit&id={$item->id}")."' class='lwbio_td_actions_button'><i class='bi bi-pencil-square'></i></a>
 						<form action=".admin_url('admin-post.php')." method='post' class='lwbio_table_form'>
                             <input type='hidden' name='action' value='remove_link'>
                             <input type='hidden' name='data' value='link'>
                             <input type='hidden' name='lwbio_id' value=".$item->id.">
-							<button class='lwbio_table_form_button' type='submit'><i class='fas fa-trash'></i></button>
+							<button class='lwbio_table_form_button' type='submit'><i class='bi bi-trash3-fill'></i></button>
 						</form>
 					</td>
 				</tr>";
