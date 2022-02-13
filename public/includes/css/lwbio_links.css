@@ -61,8 +61,7 @@
 	background-color: #cf2e2e !important;
 }
 .lwbio__channels {
-	display: flex !important;
-	max-width: 400px !important;
+	max-width: 300px !important;
 	margin: 0 auto !important;
 }
 .lwbio__channels .lwbio__channels__item i {
@@ -70,7 +69,6 @@
 	color: black !important;
 }
 .lwbio__channels .lwbio__channels__item {
-	flex: 1 !important;
 	margin-right: 5px !important;
 	transition: transform 0.2s !important;
 }
@@ -82,12 +80,15 @@
     #lwbio__card {
         width: 80% !important;
     }
+	.lwbio__channels {
+		max-width: 500px !important;
+	}
 }
 
 @media (min-width: 992px) { 
     #lwbio__card {
       width: 50% !important;
-  } 
+	}
 }
 
 @media (prefers-color-scheme: dark) {
