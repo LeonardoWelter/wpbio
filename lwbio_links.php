@@ -44,7 +44,7 @@ add_shortcode('lwbio-links', 'lwbio_links');
 
 function lwbio_enqueue()
 {
-	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/a5981f4cad.js');
+	wp_enqueue_style('lwbio_bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
 	wp_enqueue_style('lwbio', plugins_url('public/includes/css/lwbio_links.css', __FILE__));
 }
 
