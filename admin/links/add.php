@@ -1,6 +1,6 @@
 <?php ?>
 <div class="wrap mx-auto w-75">
-	<h1 class="text-center mb-2">Adicionar novo botão</h1>
+	<h1 class="text-center mb-2 d-block">Adicionar novo botão</h1>
 	<p style="text-align: center;">Alterne entre as abas para selecionar o tipo do botão!</p>
 
 	<ul class="nav nav-tabs nav-justified mt-5" id="myTab" role="tablist">
