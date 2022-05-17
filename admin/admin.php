@@ -1,9 +1,8 @@
 <?php
 add_action('admin_menu', 'lwbio_admin_page');
-add_action('admin_enqueue_scripts', 'lwbio_enqueue_admin');
-add_action('admin_post_store_link', ['LW_DB', 'store']);
-add_action('admin_post_update_link', ['LW_DB', 'update']);
-add_action('admin_post_remove_link', ['LW_DB', 'destroy']);
+add_action('admin_post_store_link', ['BioDatabase', 'store']);
+add_action('admin_post_update_link', ['BioDatabase', 'update']);
+add_action('admin_post_remove_link', ['BioDatabase', 'destroy']);
 
 function lwbio_admin_page()
 {
@@ -54,18 +53,12 @@ function lwbio_admin_page()
 	);
 }
 
-function lwbio_enqueue_admin()
-{
-	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/a5981f4cad.js');
-	wp_enqueue_style('lwbio_admin', plugins_url('/includes/css/lwbio_admin.css', __FILE__));
-}
-
 function lwbio_add_page_html() {
-    include dirname(__FILE__) . '/add.php';
+    include dirname(__FILE__) . '/links/add.php';
 }
 
 function lwbio_edit_page_html() {
-    include dirname(__FILE__) . '/edit.php';
+    include dirname(__FILE__) . '/links/edit.php';
 }
 
 function lwbio_admin_page_html() {
