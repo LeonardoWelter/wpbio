@@ -15,7 +15,7 @@ class BioDatabase {
 		            id mediumint(9) NOT NULL AUTO_INCREMENT,
 		            time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
                     text text NOT NULL,		
-                    url varchar(55) DEFAULT '' NOT NULL,
+                    url text DEFAULT '' NOT NULL,
                     service text NOT NULL,
                     type tinyint NOT NULL,
                     PRIMARY KEY  (id)
@@ -94,6 +94,8 @@ class BioDatabase {
 
         $link = $_POST;
 
+        error_log(print_r($link, true));
+
         $wpdb->insert(
             $tableName,
             array(
@@ -112,7 +114,9 @@ class BioDatabase {
             )
         );
 
-        wp_redirect(admin_url('admin.php?page=lwbio'));
+        $wpdb->print_error();
+
+        //wp_redirect(admin_url('admin.php?page=lwbio'));
         exit();
     }
 
