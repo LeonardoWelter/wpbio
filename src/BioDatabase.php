@@ -94,8 +94,6 @@ class BioDatabase {
 
         $link = $_POST;
 
-        error_log(print_r($link, true));
-
         $wpdb->insert(
             $tableName,
             array(
@@ -114,9 +112,7 @@ class BioDatabase {
             )
         );
 
-        $wpdb->print_error();
-
-        //wp_redirect(admin_url('admin.php?page=lwbio'));
+        wp_redirect(admin_url('admin.php?page=lwbio'));
         exit();
     }
 
