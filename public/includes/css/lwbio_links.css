@@ -12,8 +12,8 @@
 #lwbio__card {
 	background-color: #fff !important;
 	width: 100% !important;
-	padding: 20px 0 20px 0 !important;
-	margin: 0 auto 0 auto !important;
+	padding: 40px 0 40px 0 !important;
+	margin: 50px auto 50px auto !important;
 	border-radius: 10px !important;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) !important;
 }
@@ -31,7 +31,7 @@
 #lwbio__h2 {
 	font-size: 1.5em !important;
 	font-weight: bold;
-  	margin-top: 0.83em !important;
+  	margin-top: 2.5em !important;
   	margin-bottom: 0.83em !important;
 	color: #024873 !important;
 }
@@ -71,6 +71,7 @@
 .lwbio__channels .lwbio__channels__item {
 	margin-right: 5px !important;
 	transition: transform 0.2s !important;
+	display: inline-block;
 }
 .lwbio__channels__item:hover {
 	transform: scale(1.5) !important;
@@ -100,7 +101,7 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4) !important;
     }    
     #lwbio__h2 {
-        color: #2e8bc0 !important;
+        color: #ddd !important;
     }
     .lwbio__channels .lwbio__channels__item i {
         color: #ddd !important;
