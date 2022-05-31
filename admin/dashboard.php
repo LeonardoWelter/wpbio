@@ -11,18 +11,42 @@ $channels = BioChannels::index();
     <h4 class="text-center">Links</h4>
     <table class="table table-striped">
         <tr>
+            <th class="text-center">Ordem</th>
             <th>Texto</th>
             <th>Link</th>
             <th>Ações</th>
         </tr>
-        <?php foreach (BioDatabase::index(0) as $item) : ?>
-            <tr>
-                <td style="min-width: 45%; max-width: 45%;"><?= $item->text ?></td>
-                <td style="min-width: 45%; max-width: 45%;"><?= $item->url ?></td>
-                <td class="btn-group w-100" role='group'>
-                    <div class="w-100">
-                        <a href='<?= admin_url("admin.php?page=lwbio_edit&id={$item->id}") ?>' class='btn btn-primary'><i class='bi bi-pencil-square'></i></a>
-                        <button class="btn btn-danger" onclick="confirmModal(<?= $item->id ?>,'remove_link')"><i class='bi bi-trash3-fill'></i></button>
+        <?php foreach ($links as $link) : ?>
+            <tr class="align-middle">
+                <td class="text-center">
+                    <?php if ($link->ordem == 1) : ?>
+                        <button class="btn btn-link disabled px-3 py-0">
+                            <i class="d-block bi bi-caret-up-fill"></i>
+                        </button>
+                    <?php else : ?>
+                        <button class="btn btn-link px-3 py-0" onclick="changeOrder(<?= $link->id ?>, 'link_up', 'link')">
+                            <i class="d-block bi bi-caret-up-fill"></i>
+                        </button>
+                    <?php endif; ?>
+                    <span class="d-block"><?= $link->ordem ?></span>
+                    <?php if ($link->ordem == BioLinks::getMaxOrder()) : ?>
+                        <button class="btn btn-link disabled px-3 py-0">
+                            <i class="d-block bi bi-caret-down-fill"></i>
+                        </button>
+                    <?php else : ?>
+                        <button class="btn btn-link px-3 py-0" onclick="changeOrder(<?= $link->id ?>, 'link_down', 'link')">
+                            <i class="d-block bi bi-caret-down-fill"></i>
+                        </button>
+                    <?php endif; ?>
+                </td>
+                <td style="min-width: 40%; max-width: 40%;"><?= (strlen($link->text) > 50) ? substr($link->text, 0, 50) . '...' : $link->text ?></td>
+                <td style="min-width: 40%; max-width: 40%;"><?= (strlen($link->url) > 50) ? substr($link->url, 0, 50) . '...' : $link->url ?></td>
+                <td>
+                    <div class="btn-group w-100" role="group">
+                        <div class="w-100">
+                            <a href='<?= admin_url("admin.php?page=lwbio_link_edit&id={$link->id}") ?>' class='btn btn-primary'><i class='bi bi-pencil-square'></i></a>
+                            <button class="btn btn-danger" onclick="confirmModal(<?= $link->id ?>,'link_remove')"><i class='bi bi-trash3-fill'></i></button>
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -32,21 +56,56 @@ $channels = BioChannels::index();
     <h4 class="text-center mt-5">Redes Sociais</h4>
     <table class="table table-striped">
         <tr>
+            <th class="text-center">Ordem</th>
             <th scope="col">Serviço</th>
             <th scope="col">Link</th>
             <th scope="col">Ações</th>
         </tr>
-        <?php foreach (BioDatabase::index(1) as $item) : ?>
-            <tr>
-                <td style="min-width: 45%; max-width: 45%;"><?= ucfirst($item->service) ?></td>
-                <td style="min-width: 45%; max-width: 45%;"><?= $item->url ?></td>
+        <?php foreach ($channels as $channel) : ?>
+            <tr class="align-middle">
+                <td class="text-center">
+                    <?php if ($channel->ordem == 1) : ?>
+                        <button class="btn btn-link disabled px-3 py-0">
+                            <i class="d-block bi bi-caret-up-fill"></i>
+                        </button>
+                    <?php else : ?>
+                        <button class="btn btn-link px-3 py-0"  onclick="changeOrder(<?= $channel->id ?>, 'channel_up', 'channel')">
+                            <i class="d-block bi bi-caret-up-fill"></i>
+                        </button>
+                    <?php endif; ?>
+                    <span class="d-block"><?= $channel->ordem ?></span>
+                    <?php if ($channel->ordem == BioChannels::getMaxOrder()) : ?>
+                        <button class="btn btn-link disabled px-3 py-0">
+                            <i class="d-block bi bi-caret-down-fill"></i>
+                        </button>
+                    <?php else: ?>
+                        <button class="btn btn-link px-3 py-0" onclick="changeOrder(<?= $channel->id ?>, 'channel_down', 'channel')">
+                            <i class="d-block bi bi-caret-down-fill"></i>
+                        </butt>
+                    <?php endif; ?>
+                </td>
+                <td style="min-width: 40%; max-width: 40%;"><?= ucfirst($channel->service) ?></td>
+                <td style="min-width: 40%; max-width: 40%;"><?= (strlen($channel->url) > 50) ? substr($channel->url, 0, 50) . '...' : $channel->url ?></td>
                 <td>
-                    <a href='<?= admin_url("admin.php?page=lwbio_edit&id={$item->id}") ?>' class='btn btn-primary'><i class='bi bi-pencil-square'></i></a>
-                    <button class="btn btn-danger" onclick="confirmModal(<?= $item->id ?>,'remove_link')"><i class='bi bi-trash3-fill'></i></button>
+                    <a href='<?= admin_url("admin.php?page=lwbio_channel_edit&id={$channel->id}") ?>' class='btn btn-primary'><i class='bi bi-pencil-square'></i></a>
+                    <button class="btn btn-danger" onclick="confirmModal(<?= $channel->id ?>,'channel_remove')"><i class='bi bi-trash3-fill'></i></button>
                 </td>
             </tr>
         <?php endforeach; ?>
     </table>
+</div>
+
+<div class="hidden">
+    <form id="formLink" action="<?= admin_url('admin-post.php') ?>" method='post'>
+        <input type='hidden' name='action' value='link_order'>
+        <input id="formLinkAction" type='hidden' name='link_action' value=''>
+        <input id="formLinkId" type='hidden' name='link_id' value=''>
+    </form>
+    <form id="formChannel" action="<?= admin_url('admin-post.php') ?>" method='post'>
+        <input type='hidden' name='action' value='channel_order'>
+        <input id="formChannelAction" type='hidden' name='channel_action' value=''>
+        <input id="formChannelId" type='hidden' name='channel_id' value=''>
+    </form>
 </div>
 
 <!-- Button trigger modal -->
@@ -76,21 +135,14 @@ $channels = BioChannels::index();
 </div>
 
 <script>
-    var js_data = '<?php echo json_encode($linksAll); ?>';
-    js_data = JSON.parse(js_data);
+    var links = '<?= json_encode($links); ?>';
+    links = JSON.parse(links);
+
+    var channels = '<?= json_encode($channels); ?>';
+    channels = JSON.parse(channels);
 
 
     function confirmModal(id, action) {
-
-        let link = js_data.find(o => o.id == id);
-
-        type = link.type == 0 ? 'Link' : 'Rede Social';
-
-        modalBody = document.getElementById('confirmModalBody');
-        modalBody.innerHTML = `<p>Texto: <br> ${link.text}</p>
-                                <p>Link: <br> ${link.url}</p>
-                                <p>Tipo: <br> ${type}</p>
-                                <p>Serviço:  <br> ${link.service}</p>`;
 
         formAction = document.getElementById('formAction');
         formAction.value = action;
@@ -99,9 +151,31 @@ $channels = BioChannels::index();
         formId.value = id;
 
         switch (action) {
-            case 'remove_link':
+            case 'link_remove':
+                let link = links.find(o => o.id == id);
+
                 modalLabel = document.getElementById('confirmModalLabel');
-                modalLabel.innerHTML = "Remover pedido?"
+                modalLabel.innerHTML = "Remover Link?";
+
+                modalBody = document.getElementById('confirmModalBody');
+                modalBody.innerHTML = `<p>Ordem: <br> ${link.ordem}</p>
+                                <p>Texto: <br> ${link.text}</p>
+                                <p>Link: <br> ${link.url}</p>`;
+
+                formBtn = document.getElementById('formBtn');
+                formBtn.className = 'btn btn-danger';
+                formBtn.value = 'Remover';
+                break;
+            case 'channel_remove':
+                let channel = channels.find(o => o.id == id);
+
+                modalLabel = document.getElementById('confirmModalLabel');
+                modalLabel.innerHTML = "Remover Rede Social?"
+
+                modalBody = document.getElementById('confirmModalBody');
+                modalBody.innerHTML = `<p>Ordem: <br> ${channel.ordem}</p>
+                                <p>Link: <br> ${channel.url}</p>
+                                <p>Serviço:  <br> ${channel.service}</p>`;
 
                 formBtn = document.getElementById('formBtn');
                 formBtn.className = 'btn btn-danger';
@@ -109,7 +183,30 @@ $channels = BioChannels::index();
                 break;
         }
 
+
         document.getElementById('launchModal').click();
 
+    }
+
+    function changeOrder(id, action, type) {
+        if (type == 'link') {
+            formLinkAction = document.getElementById('formLinkAction');
+            formLinkAction.value = action;
+
+            formLinkId = document.getElementById('formLinkId');
+            formLinkId.value = id;
+
+            formLink = document.getElementById('formLink');
+            formLink.submit();
+        } else if (type == 'channel') {
+            formChannelAction = document.getElementById('formChannelAction');
+            formChannelAction.value = action;
+
+            formChannelId = document.getElementById('formChannelId');
+            formChannelId.value = id;
+
+            formChannel = document.getElementById('formChannel');
+            formChannel.submit();
+        }
     }
 </script>
