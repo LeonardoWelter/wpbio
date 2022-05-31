@@ -24,7 +24,7 @@ WP Bio pode:
 <img src="https://i.imgur.com/uQwaAWf.png">
 <br><br>
 ** Listagem de links **
-<img src="https://i.imgur.com/aU2g9K4.png">
+<img src="https://i.imgur.com/FIc1i4j.jpg">
 <br><br>
 ** Adicionar novo link **
-<img src="https://i.imgur.com/JE3mjAJ.png">
+<img src="https://i.imgur.com/qYO8guT.jpg">
