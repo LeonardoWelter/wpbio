@@ -17,14 +17,14 @@ WP Bio pode:
 
 ## Imagens
 
-** Dark Mode **
+**Dark Mode**
 <img src="https://i.imgur.com/2P4ebUl.png">
 <br><br>
-** Light Mode **
+**Light Mode**
 <img src="https://i.imgur.com/uQwaAWf.png">
 <br><br>
-** Listagem de links **
+**Listagem de links**
 <img src="https://i.imgur.com/FIc1i4j.jpg">
 <br><br>
-** Adicionar novo link **
+**Adicionar novo link**
 <img src="https://i.imgur.com/qYO8guT.jpg">
