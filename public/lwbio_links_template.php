@@ -1,7 +1,7 @@
 <?php //WP Links Template
 
-$links = BioDatabase::index(0);
-$channels = BioDatabase::index(1);
+$links = BioLinks::index();
+$channels = BioChannels::index();
 $logo = esc_attr(get_option('lwbio_logo'));
 $channel_text = esc_attr(get_option('lwbio_channel_text'));
 
@@ -15,18 +15,18 @@ $channel_text = esc_attr(get_option('lwbio_channel_text'));
         <?php endif; ?>
 
         <div class="lwbio__links">
-            <?php foreach ($links as $value) : ?>
+            <?php foreach ($links as $link) : ?>
                 <div class='lwbio__links__item'>
-                    <a class='lwbio__links__item lwbio__links__item--lb' href='<?= $value->url ?>' target='_blank' rel='noopener'><?= $value->text ?>
+                    <a class='lwbio__links__item lwbio__links__item--lb' href='<?= $link->url ?>' target='_blank' rel='noopener'><?= $link->text ?>
                     </a>
                 </div>
             <?php endforeach; ?>
         </div>
         <h2 id="lwbio__h2"><?= empty($channel_text) ? 'Me siga nas redes sociais' : $channel_text ?></h2>
         <div class="lwbio__channels">
-            <?php foreach ($channels as $value) : ?>
-                <a class='lwbio__channels__item' href='<?= $value->url ?>' target='_blank' rel='noopener'>
-                    <i class='<?= lwbio_fa_icon($value->service) ?>'></i>
+            <?php foreach ($channels as $channel) : ?>
+                <a class='lwbio__channels__item' href='<?= $channel->url ?>' target='_blank' rel='noopener'>
+                    <i class='<?= lwbio_fa_icon($channel->service) ?>'></i>
                 </a>
             <?php endforeach; ?>
         </div>
