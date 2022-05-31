@@ -27,6 +27,8 @@
 defined('ABSPATH') or die('Nope, not accessing this');
 
 require_once("src/BioDatabase.php");
+require_once("src/BioLinks.php");
+require_once("src/BioChannels.php");
 require_once("src/IconHandler.php");
 require_once("admin/admin.php");
 
