@@ -1,8 +1,13 @@
 <?php
 add_action('admin_menu', 'lwbio_admin_page');
-add_action('admin_post_store_link', ['BioDatabase', 'store']);
-add_action('admin_post_update_link', ['BioDatabase', 'update']);
-add_action('admin_post_remove_link', ['BioDatabase', 'destroy']);
+add_action('admin_post_link_store', ['BioLinks', 'store']);
+add_action('admin_post_link_update', ['BioLinks', 'update']);
+add_action('admin_post_link_remove', ['BioLinks', 'destroy']);
+add_action('admin_post_link_order', ['BioLinks', 'changeOrder']);
+add_action('admin_post_channel_store', ['BioChannels', 'store']);
+add_action('admin_post_channel_update', ['BioChannels', 'update']);
+add_action('admin_post_channel_remove', ['BioChannels', 'destroy']);
+add_action('admin_post_channel_order', ['BioChannels', 'changeOrder']);
 
 function lwbio_admin_page()
 {
