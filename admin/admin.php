@@ -24,7 +24,7 @@ function lwbio_admin_page()
     add_submenu_page(
 		'lwbio',
 		'Listar links',
-        'Listar links',
+        'Meus links',
 		'manage_options',
 		'lwbio',
 		'lwbio_admin_page_html',
@@ -33,10 +33,28 @@ function lwbio_admin_page()
 	add_submenu_page(
 		'lwbio',
 		'Adicionar novo link',
-		'Adicionar link',
+		'Novo link',
 		'manage_options',
         'lwbio_add',
-		'lwbio_add_page_html'
+		'lwbio_links_add_page_html'
+	);
+
+	add_submenu_page(
+		null,
+		'Editar link',
+		'Editar link',
+		'manage_options',
+        'lwbio_link_edit',
+		'lwbio_links_edit_page_html'
+	);
+
+	add_submenu_page(
+		null,
+		'Editar rede',
+		'Editar rede',
+		'manage_options',
+        'lwbio_channel_edit',
+		'lwbio_channels_edit_page_html'
 	);
 
 	add_submenu_page(
@@ -48,22 +66,18 @@ function lwbio_admin_page()
 		'lwbio_config_page_html'
 	);
 
-    add_submenu_page(
-		null,
-		'Editar link',
-		'Editar link',
-		'manage_options',
-        'lwbio_edit',
-		'lwbio_edit_page_html'
-	);
 }
 
-function lwbio_add_page_html() {
-    include dirname(__FILE__) . '/links/add.php';
+function lwbio_links_add_page_html() {
+    include dirname(__FILE__) . '/add.php';
 }
 
-function lwbio_edit_page_html() {
+function lwbio_links_edit_page_html() {
     include dirname(__FILE__) . '/links/edit.php';
+}
+
+function lwbio_channels_edit_page_html() {
+    include dirname(__FILE__) . '/channels/edit.php';
 }
 
 function lwbio_admin_page_html() {
