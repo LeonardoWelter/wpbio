@@ -15,7 +15,7 @@
 		<div class="tab-pane fade show active" id="link" role="tabpanel" aria-labelledby="link-tab">
 			<h5 class="fs-5 text-center mt-5">Adicionar link</h5>
 			<form action="<?php echo admin_url('admin-post.php') ?>" method="post" class="w-50 mx-auto mt-2">
-				<input type="hidden" name="action" value="store_link">
+				<input type="hidden" name="action" value="link_store">
 				<input type="hidden" name="data" value="link">
 				<input type="hidden" name="lwbio_type" value="0">
 				<input type="hidden" name="lwbio_service" value="link">
@@ -35,7 +35,7 @@
 		<div class="tab-pane fade" id="channel" role="tabpanel" aria-labelledby="channel-tab">
 			<h5 class="fs-5 text-center mt-5">Adicionar rede social</h5>
 			<form action="<?php echo admin_url('admin-post.php') ?>" method="post" class="w-50 mx-auto mt-2">
-				<input type="hidden" name="action" value="store_link">
+				<input type="hidden" name="action" value="channel_store">
 				<input type="hidden" name="data" value="link">
 				<input type="hidden" name="lwbio_type" value="1">
 				<input type="hidden" name="lwbio_text" value="channel">
