@@ -1,5 +1,6 @@
 <?php
-$linksAll = BioDatabase::index()
+$links = BioLinks::index();
+$channels = BioChannels::index();
 ?>
 <div class="wrap">
     <h1><?= esc_html(get_admin_page_title()); ?></h1>
