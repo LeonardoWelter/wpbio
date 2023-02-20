@@ -46,16 +46,16 @@ add_shortcode('lwbio-links', 'lwbio_links');
 function lwbio_enqueue() {
 	global $post;
 	if (is_a($post, 'WP_Post') && has_shortcode($post->post_content, 'lwbio-links')) {
-		wp_enqueue_style('lwbio_bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
+		wp_enqueue_style('lwbio-bi', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
 		wp_enqueue_style('lwbio', plugins_url('public/includes/css/lwbio_links.css', __FILE__));
 	}
 }
 
 function lwbio_admin_enqueue() {
 	if (isset($_GET['page']) and (strpos($_GET['page'], 'lwbio') !== false)) {
-		wp_enqueue_style('lwrbootstrapicons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
-		wp_enqueue_style('lwrbootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
-		wp_enqueue_script('lwrbootstrapjs', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js');
+		wp_enqueue_style('lwbio-bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css');
+		wp_enqueue_style('lwbio-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
+		wp_enqueue_script('lwbio-bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js');
 	}
 }
 
